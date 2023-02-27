@@ -1,0 +1,12 @@
+digraph "Symbol Table" {
+	node [shape=plaintext]
+	0 [label=<<TABLE BORDER='0' CELLBORDER='1' CELLSPACING='0' CELLPADDING='4'><TR><TD COLSPAN='3'>Root</TD></TR><TR><TD>int</TD><TD>printf</TD><TD></TD></TR><TR><TD>int</TD><TD>scanf</TD><TD></TD></TR><TR><TD>int</TD><TD>func</TD><TD></TD></TR><TR><TD>int</TD><TD>main</TD><TD></TD></TR></TABLE>>]
+	0 -> 1
+	1 [label=<<TABLE BORDER='0' CELLBORDER='1' CELLSPACING='0' CELLPADDING='4'><TR><TD COLSPAN='3'>code block</TD></TR><TR><TD>int</TD><TD>a</TD><TD>4($sp)</TD></TR></TABLE>>]
+	1 -> 2
+	2 [label=<<TABLE BORDER='0' CELLBORDER='1' CELLSPACING='0' CELLPADDING='4'><TR><TD COLSPAN='3'>code block</TD></TR></TABLE>>]
+	1 -> 4
+	4 [label=<<TABLE BORDER='0' CELLBORDER='1' CELLSPACING='0' CELLPADDING='4'><TR><TD COLSPAN='3'>code block</TD></TR></TABLE>>]
+	0 -> 6
+	6 [label=<<TABLE BORDER='0' CELLBORDER='1' CELLSPACING='0' CELLPADDING='4'><TR><TD COLSPAN='3'>code block</TD></TR></TABLE>>]
+}

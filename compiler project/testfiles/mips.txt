@@ -1,0 +1,46 @@
+	.data
+
+	.text
+
+main:
+	addiu $sp, $sp, -4
+	sw $ra, 0($sp)
+	li $v0, 1
+	addiu $sp, $sp, -4
+	li $t0, -5
+	sw $t0, 0($sp)
+	jal func
+	addiu $sp, $sp, 4
+	move $a0, $v1
+	syscall
+
+	li $v1, 0
+	b main.exit
+
+main.exit:
+	lw $ra, 0($sp)
+	addiu $sp, $sp, 4
+	li $v0, 10
+	syscall
+
+func:
+	addiu $sp, $sp, -4
+	sw $ra, 0($sp)
+	lw $t0, 4($sp)
+	li $t1, 0
+	sgt $t0, $t0, $t1
+	beq $zero, $t0, L0
+
+	li $v1, 1
+	b func.exit
+	b L1
+
+L0:
+	li $v1, 0
+	b func.exit
+L1:
+
+func.exit:
+	lw $ra, 0($sp)
+	addiu $sp, $sp, 4
+	jr $ra
